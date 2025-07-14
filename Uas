@@ -1,0 +1,38 @@
+Program mencatat data belanja toko
+
+# Input data customer dan tanggal belanja (dalam tuple)
+nama_customer = input("Masukkan nama customer: ")
+tanggal_belanja = input("Masukkan tanggal belanja (format: YYYY-MM-DD): ")
+data_customer = (nama_customer, tanggal_belanja)
+
+# List untuk menyimpan daftar barang
+daftar_belanja = []
+
+
+    # Buat dictionary untuk setiap barang
+    barang = {
+        'nama': nama_barang,
+        'harga': harga_satuan,
+        'qty': qty,
+        'subtotal': harga_satuan * qty
+    }
+
+    # Tambahkan ke list
+    
+
+# Hitung total belanja
+total_bayar = sum(item['subtotal'] for item in daftar_belanja)
+
+# Tampilkan data
+print("\n===== STRUK BELANJA =====")
+print(f"Nama Customer : {data_customer[0]}")
+print(f"Tanggal Belanja: {data_customer[1]}")
+print("\nDaftar Belanja:")
+print(f"{'No':<4} {'Nama Barang':<20} {'Harga':<10} {'Qty':<5} {'Subtotal':<10}")
+print("-" * 55)
+for i, item in enumerate(daftar_belanja, 1):
+    print(f"{i:<4} {item['nama']:<20} {item['harga']:<10,.2f} {item['qty']:<5} {item['subtotal']:<10,.2f}")
+
+print("-" * 55)
+print(f"{'Total Bayar':>42}: {total_bayar:,.2f}")
+print("=========================")
